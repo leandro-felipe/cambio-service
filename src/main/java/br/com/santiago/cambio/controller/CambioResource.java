@@ -32,7 +32,7 @@ public class CambioResource {
 		if(cambio == null) {
 			throw new RuntimeException("Currence Unsuported");
 		}
-		BigDecimal conversionFactor = cambio.getConvertedFactor();
+		BigDecimal conversionFactor = cambio.getConversionFactor();
 		BigDecimal convertedValue = conversionFactor.multiply(amount);
 		cambio.setConvertedValue(convertedValue.setScale(2,RoundingMode.CEILING));
 		cambio.setEnvironment(port);

@@ -23,7 +23,7 @@ public class Cambio implements Serializable{
 	@Column(name = "to_currency", nullable = false, length = 3)
 	private String to;
 	@Column(nullable = false)
-	private BigDecimal convertedFactor;
+	private BigDecimal conversionFactor;
 	
 	@Transient
 	private BigDecimal convertedValue;
@@ -33,12 +33,12 @@ public class Cambio implements Serializable{
 	public Cambio() {
 	}
 
-	public Cambio(Long id, String from, String to, BigDecimal convertedFactor, BigDecimal convertedValue,
+	public Cambio(Long id, String from, String to, BigDecimal conversionFactor, BigDecimal convertedValue,
 			String environment) {
 		this.id = id;
 		this.from = from;
 		this.to = to;
-		this.convertedFactor = convertedFactor;
+		this.conversionFactor = conversionFactor;
 		this.convertedValue = convertedValue;
 		this.environment = environment;
 	}
@@ -67,12 +67,12 @@ public class Cambio implements Serializable{
 		this.to = to;
 	}
 
-	public BigDecimal getConvertedFactor() {
-		return convertedFactor;
+	public BigDecimal getConversionFactor() {
+		return conversionFactor;
 	}
 
-	public void setConvertedFactor(BigDecimal convertedFactor) {
-		this.convertedFactor = convertedFactor;
+	public void setConversionFactor(BigDecimal conversionFactor) {
+		this.conversionFactor = conversionFactor;
 	}
 
 	public BigDecimal getConvertedValue() {
